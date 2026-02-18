@@ -75,6 +75,8 @@ void mv_compute(int i) {
  */
 void parallel_itmv_mult(int threadcnt, int mappingtype, int chunksize) {
   /*Your solutuion with OpenMP*/
+  omp_set_num_threads(threadcnt);
+
   omp_sched_t sched_type;
   if(mappingtype == BLOCK_MAPPING){
     sched_type = omp_sched_static;
